@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Basic Chat App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href>
+    <script src></script>
+</head>
+
+<body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+        <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+
+
+    <!-- makes socket work and defaults to the route set up on index.js -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        // put these elements from the html above into variable so you can mess around with them
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+        var messages = document.getElementById('messages');
+
+        // this is the same thing as onSubmit with a submitHandler
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            //if an input value exists when you press the submit button...
+            if (input.value) {
+                // sends it out so the server can use it
+                socket.emit('chat message', input.value);
+                // resets the input
+                input.value = '';
+            }
+        });
+
+        // now this socket is listening for the io.emit from the server(once the server
+        // recieves the chat message already sent by this client)
+        socket.on('chat message', function (message) {
+            // this is adding in a list item element to the html so that it shows up on the chat
+            var item = document.createElement("li");
+            item.textContent = message;
+            //using var messages from up above, your adding to it
+            messages.appendChild(item);
+            //not exactly sure what this is doing
+            window.scrollTo(0, document.body.scrollHeight);
+        })
+    </script>
+
+</body>
+
+</html>
