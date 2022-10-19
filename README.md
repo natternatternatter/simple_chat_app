@@ -5,32 +5,28 @@
 <p>Utilizing Socket.io, users can:
   
   <ul>
-    <li>Login or Register, to access their own unique profile and schedule
-    <li>Create and host a new class that yoga students will be able to sign up and pay for
-    <li>Edit and Delete classes they have created and are hosting if details change
-    <li>Sign up to attend, and pay, for classes hosted by other users
-    <li>Browse a list of all the upcoming classes available to sign up for (instructor, day, time, location, price)
-    <li>View a curated, personal schedule that shows all classes you've signed up for as well as classes which you are hosting
+    <li>Type and send messages that will appear in the DOM of all other simultaneous users, instantly.
   </ul>
   
 <h3>Demo</h3>
     
 
+https://user-images.githubusercontent.com/99225070/196587214-9f8699a5-c1c3-44d9-8a77-89ae32574cdf.mov
 
-<h3>Swipe API</h3>
-
-<p>Integration of Stripe API to allow users to pay for classes online</p>
-<p>API takes users CC information exchanging the needed information for tokens, keeping all private information safe and out of anyone's hands besides Stripe
-<p>For more information on this API, check out <a href=https://stripe.com/docs/api>Stripe's docs here!</a>
 
 <h3>Tech Used</h3>
 
   <ul>
-    <li>Java
-    <li>MySQL
-    <li>Spring Tool Suite
-    <li>Spring Boot
-    <li>Maven
-    <li>Bootstrap
-    <li>Thymeleaf
+    <li>Javascript
+    <li>Express
+    <li>Socket.io
+    <li>HTML
+  </ul>
+  
+ <h3>Further Plans</h3>
+ 
+   <ul>
+    <li>Incorporate Tailwind CSS Framework for efficient UX and design
+    <li>Store message data using MongoDB and Mongoose to access and view past conversations
+    <li>Utilize the database incorporating user profiles and contacts
   </ul>
