@@ -8,7 +8,7 @@ const io = new Server(server);
 
 //grab the html file
 app.get("/", (request, response) => {
-    response.sendFile('/Users/mn/Documents/basic_chat_app/index.html');
+    response.sendFile('/Users/mn/Documents/simple_chat_app/index.html');
 });
 
 //turn socket.io on
